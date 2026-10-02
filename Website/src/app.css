@@ -1,28 +1,28 @@
 @font-face {
-    font-family: 'LethalCompany';
-    src: url('/fonts/3270-Regular.ttf') format('truetype');
-    font-weight: 400; /* Use 700 for bold, etc. */
-    font-style: normal;
-    font-display: swap; /* Keeps text visible while loading */
+	font-family: 'LethalCompany';
+	src: url('/fonts/3270-Regular.ttf') format('truetype');
+	font-weight: 400; /* Use 700 for bold, etc. */
+	font-style: normal;
+	font-display: swap; /* Keeps text visible while loading */
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
 }
 
 body {
-    font-family: 'LethalCompany', sans-serif;
+	font-family: 'LethalCompany', sans-serif;
 
-    color: white;
-    background-color: rgb(121, 121, 121);
+	color: white;
+	background-color: rgb(121, 121, 121);
 }
 
 p {
-    font-size: 30px;
-    font-weight: bold;
-    text-shadow: 1px 1px 10px black;
-    white-space: nowrap;
+	font-size: 30px;
+	font-weight: bold;
+	text-shadow: 1px 1px 10px black;
+	white-space: nowrap;
 }
