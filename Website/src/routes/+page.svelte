@@ -1,11 +1,11 @@
 <script lang="ts">
-	import Crew from '$lib/components/Crew.svelte';
+	import CrewStat from '$lib/components/CrewStat.svelte';
+	import MoonStat from '$lib/components/MoonStat.svelte';
 </script>
 
 <div class="overlay">
-	<Crew playerCount={1} />
-	<Crew playerCount={99} grow={true} />
-	<Crew playerCount={4} />
+	<CrewStat playerCount={1} />
+	<MoonStat moonName="123 Test" />
 </div>
 
 <style>
