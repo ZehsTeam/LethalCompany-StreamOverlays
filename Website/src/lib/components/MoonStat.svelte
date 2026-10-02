@@ -1,7 +1,15 @@
 <script lang="ts">
 	import Stat from './Stat.svelte';
 
-	let { moonName }: { moonName: string } = $props();
+	let {
+        moonName,
+        weatherName,
+        showWeather,
+    }: {
+        moonName: string;
+        weatherName: string;
+        showWeather: boolean;
+    } = $props();
 </script>
 
 <Stat grow={true}>
