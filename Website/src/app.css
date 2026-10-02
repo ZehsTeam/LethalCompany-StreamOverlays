@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'LethalCompany';
+    src: url('/fonts/3270-Regular.ttf') format('truetype');
+    font-weight: 400; /* Use 700 for bold, etc. */
+    font-style: normal;
+    font-display: swap; /* Keeps text visible while loading */
+}
+
+body {
+    font-family: 'LethalCompany', sans-serif;
+}
