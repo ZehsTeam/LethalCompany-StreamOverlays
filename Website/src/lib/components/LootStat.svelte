@@ -3,15 +3,15 @@
 	import { getTextWithValues } from '$lib/formatter';
 
 	let {
-		format = 'Crew: {value}',
-		playerCount
+		format = 'Ship Loot: ${value}',
+		lootValue
 	}: {
 		format?: string;
-		playerCount: number;
+		lootValue: number;
 	} = $props();
 
-	let text = $derived(getTextWithValues(format, [playerCount]));
-	let preferredText = $derived(getTextWithValues(format, [99]));
+	let text = $derived(getTextWithValues(format, [lootValue]));
+	let preferredText = $derived(getTextWithValues(format, [99999]));
 </script>
 
 <Stat>

@@ -1,22 +1,28 @@
 <script lang="ts">
 	import Stat from './Stat.svelte';
+	import { getTextWithValues } from '$lib/formatter';
 
 	let {
-        moonName,
-        weatherName,
-        showWeather,
-    }: {
-        moonName: string;
-        weatherName: string;
-        showWeather: boolean;
-    } = $props();
+		format = 'Moon: {value}',
+		moonName,
+		weatherName,
+		showWeather
+	}: {
+		format?: string;
+		moonName: string;
+		weatherName: string;
+		showWeather: boolean;
+	} = $props();
+
+	let text = $derived(getTextWithValues(format, [moonName]));
+	let preferredText = $derived(getTextWithValues(format, ['41 Experimentation']));
 </script>
 
 <Stat grow={true}>
-	<p>Moon: {moonName}</p>
+	<p>{text}</p>
 
 	{#snippet preferred()}
-		<p>Moon: 41 Experimentation</p>
+		<p>{preferredText}</p>
 	{/snippet}
 </Stat>
 

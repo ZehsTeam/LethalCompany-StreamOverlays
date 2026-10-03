@@ -3,15 +3,15 @@
 	import { getTextWithValues } from '$lib/formatter';
 
 	let {
-		format = 'Crew: {value}',
-		playerCount
+		format = 'Avg/Day: ${value}',
+		averagePerDayValue
 	}: {
 		format?: string;
-		playerCount: number;
+		averagePerDayValue: number;
 	} = $props();
 
-	let text = $derived(getTextWithValues(format, [playerCount]));
-	let preferredText = $derived(getTextWithValues(format, [99]));
+	let text = $derived(getTextWithValues(format, [averagePerDayValue]));
+	let preferredText = $derived(getTextWithValues(format, [9999]));
 </script>
 
 <Stat>
