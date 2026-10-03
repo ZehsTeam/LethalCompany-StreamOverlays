@@ -5,6 +5,7 @@
 	import DayStat from '$lib/components/DayStat.svelte';
 	import QuotaStat from '$lib/components/QuotaStat.svelte';
 	import LootStat from '$lib/components/LootStat.svelte';
+	import AveragePerDayStat from '$lib/components/AveragePerDayStat.svelte';
 </script>
 
 <StatHolder>
@@ -13,6 +14,7 @@
 	<DayStat day={1} dayInQuota={1} maxDaysInQuota={3} />
 	<QuotaStat quotaValue={130} quotaIndex={1} />
 	<LootStat lootValue={999} />
+	<AveragePerDayStat averagePerDayValue={999} />
 </StatHolder>
 
 <style>
