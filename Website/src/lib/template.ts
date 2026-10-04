@@ -1,5 +1,5 @@
-export const getTextWithValues = (text: string, values: any[]): string => {
-	let result = text;
+export const fillTemplate = (template: string, values: any[]): string => {
+	let result = template;
 
 	for (let i = 0; i < values.length; i++) {
 		let key = i == 0 ? '{value}' : `{value${i + 1}}`;

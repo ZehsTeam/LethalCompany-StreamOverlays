@@ -15,7 +15,7 @@
 
 <script lang="ts">
 	import Stat from './Stat.svelte';
-	import { getTextWithValues } from '$lib/formatter';
+	import { fillTemplate } from '$lib/template';
 
 	let {
 		payload
@@ -24,9 +24,9 @@
 	} = $props();
 
 	let text = $derived(
-		getTextWithValues(payload.template, [payload.quotaValue, payload.quotaIndex])
+		fillTemplate(payload.template, [payload.quotaValue, payload.quotaIndex])
 	);
-	let preferredText = $derived(getTextWithValues(payload.template, [99999, 99]));
+	let preferredText = $derived(fillTemplate(payload.template, [99999, 99]));
 </script>
 
 <Stat>

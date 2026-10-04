@@ -13,7 +13,7 @@
 
 <script lang="ts">
 	import Stat from './Stat.svelte';
-	import { getTextWithValues } from '$lib/formatter';
+	import { fillTemplate } from '$lib/template';
 
 	let {
 		payload
@@ -21,8 +21,8 @@
 		payload: LootStatPayload;
 	} = $props();
 
-	let text = $derived(getTextWithValues(payload.template, [payload.lootValue]));
-	let preferredText = $derived(getTextWithValues(payload.template, [99999]));
+	let text = $derived(fillTemplate(payload.template, [payload.lootValue]));
+	let preferredText = $derived(fillTemplate(payload.template, [99999]));
 </script>
 
 <Stat>

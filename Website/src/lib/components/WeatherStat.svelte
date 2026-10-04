@@ -13,7 +13,7 @@
 
 <script lang="ts">
 	import Stat from './Stat.svelte';
-	import { getTextWithValues } from '$lib/formatter';
+	import { fillTemplate } from '$lib/template';
 
 	let {
 		payload
