@@ -1,21 +1,28 @@
+<script module lang="ts">
+	import { type StatPayload } from './Stat.svelte';
+
+	export type MoonStatPayload = StatPayload & {
+		moonName: string;
+	};
+
+	export const defaultPayload = {
+		template: 'Moon: {value}',
+		moonName: ''
+	} satisfies MoonStatPayload;
+</script>
+
 <script lang="ts">
 	import Stat from './Stat.svelte';
 	import { getTextWithValues } from '$lib/formatter';
 
 	let {
-		format = 'Moon: {value}',
-		moonName,
-		weatherName,
-		showWeather
+		payload
 	}: {
-		format?: string;
-		moonName: string;
-		weatherName: string;
-		showWeather: boolean;
+		payload: MoonStatPayload;
 	} = $props();
 
-	let text = $derived(getTextWithValues(format, [moonName]));
-	let preferredText = $derived(getTextWithValues(format, ['41 Experimentation']));
+	let text = $derived(getTextWithValues(payload.template, [payload.moonName]));
+	let preferredText = $derived(getTextWithValues(payload.template, ['41 Experimentation']));
 </script>
 
 <Stat grow={true}>

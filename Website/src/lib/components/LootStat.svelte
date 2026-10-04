@@ -1,17 +1,28 @@
+<script module lang="ts">
+	import { type StatPayload } from './Stat.svelte';
+
+	export type LootStatPayload = StatPayload & {
+		lootValue: number;
+	};
+
+	export const defaultPayload = {
+		template: 'Ship Loot: ${value}',
+		lootValue: 0
+	} satisfies LootStatPayload;
+</script>
+
 <script lang="ts">
 	import Stat from './Stat.svelte';
 	import { getTextWithValues } from '$lib/formatter';
 
 	let {
-		format = 'Ship Loot: ${value}',
-		lootValue
+		payload
 	}: {
-		format?: string;
-		lootValue: number;
+		payload: LootStatPayload;
 	} = $props();
 
-	let text = $derived(getTextWithValues(format, [lootValue]));
-	let preferredText = $derived(getTextWithValues(format, [99999]));
+	let text = $derived(getTextWithValues(payload.template, [payload.lootValue]));
+	let preferredText = $derived(getTextWithValues(payload.template, [99999]));
 </script>
 
 <Stat>

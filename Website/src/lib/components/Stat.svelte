@@ -1,6 +1,10 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 
+	export type StatPayload = {
+		template: string;
+	};
+
 	let {
 		children,
 		preferred,

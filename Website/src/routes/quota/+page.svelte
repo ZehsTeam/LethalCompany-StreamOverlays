@@ -1,10 +1,13 @@
 <script lang="ts">
 	import StatHolder from '$lib/components/StatHolder.svelte';
 	import QuotaStat from '$lib/components/QuotaStat.svelte';
+	import { getOverlayState } from '$lib/OverlayState.svelte';
+
+	const overlayState = getOverlayState();
 </script>
 
 <StatHolder>
-	<QuotaStat quotaValue={130} quotaIndex={1} />
+	<QuotaStat payload={overlayState.quotaPayload} />
 </StatHolder>
 
 <style>

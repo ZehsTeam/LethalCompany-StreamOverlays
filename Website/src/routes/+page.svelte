@@ -6,15 +6,18 @@
 	import QuotaStat from '$lib/components/QuotaStat.svelte';
 	import LootStat from '$lib/components/LootStat.svelte';
 	import AveragePerDayStat from '$lib/components/AveragePerDayStat.svelte';
+	import { getOverlayState } from '$lib/OverlayState.svelte';
+
+	const overlayState = getOverlayState();
 </script>
 
 <StatHolder>
-	<CrewStat playerCount={1} />
-	<MoonStat moonName="123 Test" weatherName="None" showWeather={true} />
-	<DayStat day={1} dayInQuota={1} maxDaysInQuota={3} />
-	<QuotaStat quotaValue={130} quotaIndex={1} />
-	<LootStat lootValue={999} />
-	<AveragePerDayStat averagePerDayValue={999} />
+	<CrewStat payload={overlayState.crewPayload} />
+	<MoonStat payload={overlayState.moonPayload} />
+	<DayStat payload={overlayState.dayPayload} />
+	<QuotaStat payload={overlayState.quotaPayload} />
+	<LootStat payload={overlayState.lootPayload} />
+	<AveragePerDayStat payload={overlayState.averagePerDayPayload} />
 </StatHolder>
 
 <style>
