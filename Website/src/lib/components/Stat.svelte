@@ -11,7 +11,7 @@
 		grow = false
 	}: {
 		children: Snippet;
-		preferred: Snippet;
+		preferred?: Snippet;
 		grow?: boolean;
 	} = $props();
 </script>
@@ -20,9 +20,11 @@
 	<div class="content">
 		{@render children()}
 	</div>
-	<div class="content preferred-size-container" aria-hidden="true">
-		{@render preferred()}
-	</div>
+	{#if preferred}
+		<div class="content preferred-size-container" aria-hidden="true">
+			{@render preferred()}
+		</div>
+	{/if}
 </div>
 
 <style>

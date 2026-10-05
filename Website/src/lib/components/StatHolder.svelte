@@ -15,7 +15,7 @@
 		display: flex;
 		align-items: center;
 		flex-wrap: nowrap;
-		gap: 40px;
+		gap: 30px;
 
 		/* Debug */
 		border: 1px dashed red;

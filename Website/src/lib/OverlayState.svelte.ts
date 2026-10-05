@@ -7,6 +7,10 @@ import {
 	defaultPayload as defaultMoonPayload
 } from './components/MoonStat.svelte';
 import {
+	type WeatherStatPayload,
+	defaultPayload as defaultWeatherPayload
+} from './components/WeatherStat.svelte';
+import {
 	type DayStatPayload,
 	defaultPayload as defaultDayPayload
 } from './components/DayStat.svelte';
@@ -27,6 +31,7 @@ import { getContext, setContext } from 'svelte';
 interface OverlayState {
 	crewPayload: CrewStatPayload;
 	moonPayload: MoonStatPayload;
+	weatherPayload: WeatherStatPayload;
 	dayPayload: DayStatPayload;
 	quotaPayload: QuotaStatPayload;
 	lootPayload: LootStatPayload;
@@ -36,6 +41,7 @@ interface OverlayState {
 class OverlayStateClass implements OverlayState {
 	crewPayload = $state<CrewStatPayload>(defaultCrewPayload);
 	moonPayload = $state<MoonStatPayload>(defaultMoonPayload);
+	weatherPayload = $state<WeatherStatPayload>(defaultWeatherPayload);
 	dayPayload = $state<DayStatPayload>(defaultDayPayload);
 	quotaPayload = $state<QuotaStatPayload>(defaultQuotaPayload);
 	lootPayload = $state<LootStatPayload>(defaultLootPayload);

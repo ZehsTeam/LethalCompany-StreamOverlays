@@ -7,18 +7,22 @@
 
 	export const defaultPayload = {
 		template: 'Moon: {value}',
-		moonName: ''
+		moonName: '41 Experimentation'
 	} satisfies MoonStatPayload;
 </script>
 
 <script lang="ts">
 	import Stat from './Stat.svelte';
 	import { fillTemplate } from '$lib/template';
+	import WeatherStat from './WeatherStat.svelte';
+	import type { WeatherStatPayload } from './WeatherStat.svelte';
 
 	let {
-		payload
+		payload,
+		weatherPayload
 	}: {
 		payload: MoonStatPayload;
+		weatherPayload: WeatherStatPayload;
 	} = $props();
 
 	let text = $derived(fillTemplate(payload.template, [payload.moonName]));
@@ -27,9 +31,11 @@
 
 <Stat grow={true}>
 	<p>{text}</p>
+	<WeatherStat payload={weatherPayload} />
 
 	{#snippet preferred()}
 		<p>{preferredText}</p>
+		<WeatherStat payload={weatherPayload} />
 	{/snippet}
 </Stat>
 

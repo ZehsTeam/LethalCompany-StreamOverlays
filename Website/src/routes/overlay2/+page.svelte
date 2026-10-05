@@ -13,7 +13,7 @@
 
 <StatHolder>
 	<CrewStat payload={overlayState.crewPayload} />
-	<MoonStat payload={overlayState.moonPayload} />
+	<MoonStat payload={overlayState.moonPayload} weatherPayload={overlayState.weatherPayload} />
 	<DayStat payload={overlayState.dayPayload} />
 	<QuotaStat payload={overlayState.quotaPayload} />
 	<LootStat payload={overlayState.lootPayload} />
