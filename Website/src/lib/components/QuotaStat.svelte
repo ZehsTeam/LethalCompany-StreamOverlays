@@ -23,9 +23,7 @@
 		payload: QuotaStatPayload;
 	} = $props();
 
-	let text = $derived(
-		fillTemplate(payload.template, [payload.quotaValue, payload.quotaIndex])
-	);
+	let text = $derived(fillTemplate(payload.template, [payload.quotaValue, payload.quotaIndex]));
 	let preferredText = $derived(fillTemplate(payload.template, [99999, 99]));
 </script>
 
